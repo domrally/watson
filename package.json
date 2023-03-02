@@ -1,0 +1,42 @@
+{
+	"name": "watson",
+	"version": "0.0.1",
+	"description": "streaming demos",
+	"main": "src/index.ts",
+	"author": "Dom Mandy",
+	"keywords": [],
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/domrally/watson.git"
+	},
+	"type": "module",
+	"scripts": {
+		"stop": "npx pm2 stop all --watch",
+		"prerestart": "npm stop",
+		"restart": "npx pm2 restart 'npm start src' --watch",
+		"postrestart": "npx pm2 monit",
+		"start": "node --no-warnings --experimental-modules --loader ts-node/esm --inspect --experimental-specifier-resolution=node",
+		"test": "npx ts-node src/tests && npx eslint && npx prettier --check .",
+		"fix": "npm update && npx eslint --fix && npx prettier --write ."
+	},
+	"dependencies": {
+		"@fastify/static": "*",
+		"dotenv": "*",
+		"fastify": "*",
+		"ibm-watson": "*",
+		"pm2": "*"
+	},
+	"devDependencies": {
+		"@tsconfig/node18-strictest": "*",
+		"@types/node": "*",
+		"@typescript-eslint/eslint-plugin": "*",
+		"@typescript-eslint/parser": "*",
+		"eslint": "*",
+		"eslint-config-alloy": "*",
+		"eslint-config-prettier": "*",
+		"prettier": "*",
+		"ts-node": "*",
+		"typescript": "*"
+	}
+}

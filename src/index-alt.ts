@@ -1,0 +1,1 @@
+export { Fastify } from './Fastify'

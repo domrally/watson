@@ -1,0 +1,7 @@
+{
+	"extends": "@tsconfig/node18-strictest/tsconfig.json",
+	"display": "watson",
+	"compilerOptions": {
+		"module": "ES2022"
+	}
+}
